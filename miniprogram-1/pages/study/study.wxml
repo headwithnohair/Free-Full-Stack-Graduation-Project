@@ -1,0 +1,38 @@
+<!--pages/study/study.wxml-->
+<view style="margin-top: 30px;margin-right: 100px;">
+<view class="grid-container"  style="margin-top:30rpx;margin-bottom: 10rpx;color: rgba(255, 255, 255, 0.801);font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+<text>今日复习</text> <text>今日新词</text> <text bind:tap="back">返回</text>
+<text> {{count.view}}/{{test[1].many}}</text>   <text>{{count.cite}}/{{test[0].many}}</text>  <text> </text>
+</view>
+<view style="height:550px;width:300px;z-index: 70;position: relative;margin-left: 35px;">
+<view style="height:500px;width:280px;position: absolute;top:10px;left:10px;z-index: -1;border-radius: 5px;background-color: rgb(253, 253, 253);opacity:0.7;"></view>
+<view style="height:500px;width:260px;position: absolute;top:20px;left:20px;z-index: -2;border-radius: 5px;background-color: rgb(255, 255, 255);opacity:0.5;"></view>
+<view style="height:500px;width:240px;position: absolute;top:30px;left:30px;z-index: -3;border-radius: 5px;background-color: rgba(172, 236, 255,1);opacity:0.3;"></view>
+
+<view style="height:500px;width:300px;background-color: #ffffff;border-radius: 10px;" class="test">
+<view style="text-align: center;">
+
+<view >
+<view>
+<text style="text-align: center;padding-top: 80rpx;display: block;font-size: 100rpx;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+{{this_time_word.word}}</text>
+</view>
+<view bind:tap="audio">
+  <icon  type="success" size="16" color="#2979ff"/> <text style="font-size: 54rpx;">{{this_time_word.pernance}}</text>
+</view>
+
+</view>
+</view>
+
+<view style="margin-top: 100px;">
+
+
+
+<button bind:tap="jump_link" data-url="{{wordDetail_url}}" data-sta="1" class="buttom">我认识</button>
+<button bind:tap="jump_link" data-url="{{wordDetail_url}}" data-sta="2" class="buttom">不认识</button>
+<button bind:tap="jump_link" data-url="{{wordDetail_url}}" data-sta="3" class="buttom">太简单</button>
+</view>
+</view>
+
+</view>
+</view>

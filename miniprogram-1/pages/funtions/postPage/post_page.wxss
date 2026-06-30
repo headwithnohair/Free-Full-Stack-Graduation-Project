@@ -1,0 +1,6 @@
+/* pages/funtions/postPage/post_page.wxss */
+page{
+
+  background: linear-gradient(130deg,#ffbe71,#ff626E);
+
+}

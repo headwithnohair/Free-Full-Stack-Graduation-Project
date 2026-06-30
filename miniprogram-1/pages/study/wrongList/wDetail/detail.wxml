@@ -1,0 +1,13 @@
+<!--pages/study/wrongList/wDetail/detail.wxml-->
+<p style="grid-column: 1 / span 3;font-weight:bolder;font-size: 60rpx;display: block;">{{test.word_name}}</p>
+<view style="display: block;">
+<p style="grid-column: 1 / span 3;font-size: 40rpx;">{{test.word_say}}</p> 
+<icon type="success" size="20" color="#2979ff" style="margin-left: 10rpx;margin-top:5rpx;"></icon>
+</view>
+<text style="white-space: normal;">
+{{test.word_tran}}
+ 例句：  {{test.word_ex}}
+</text>
+
+
+<button bind:tap="jump_link" data-url="{{wrongListUrl}}" class="buttom" style="margin-top: 60rpx;">下一个</button>

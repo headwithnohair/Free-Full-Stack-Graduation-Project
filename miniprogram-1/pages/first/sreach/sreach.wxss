@@ -1,0 +1,129 @@
+/* pages/first/sreach/sreach.wxss */
+page{
+  background-color: #ffffff;
+}
+
+.sreach{
+  background-color: #f1f1f1;
+margin-top: 8px;
+  height: 30px;
+  border-radius: 30px;
+  border: 1px solid #000000;
+  padding: 1px;
+  font-size: 15px;
+  width: 630rpx;
+  display:inline-block;
+  margin-left: 3px;
+  padding-left: 10px;
+
+}
+
+.sreach_img{
+  width: 60rpx;
+  height: 30px;
+  display:inline-block;
+  text-align:center;
+  margin-left: 10px;
+  
+}
+
+
+
+
+/*css动画*/
+.main-wrap {
+  background-color: #ffffff;
+  color: rgb(255, 255, 255);
+  height: 400px;
+  display: flex;
+  justify-content:center;
+  align-items:center;    
+}
+#cssLoader1.main-wrap .child-common
+{
+  width: 8px;
+  height: 50px;
+  /*margin-right:5px;*/
+  margin-right:3px;
+  background-color: rgb(219, 98, 98);
+  -webkit-animation: animate1 1s infinite;
+  animation: animate1 1s infinite;
+  float: left;
+}
+
+#cssLoader1.main-wrap .child1
+{
+ margin-right: 3px;
+} 
+
+#cssLoader1.main-wrap .child10
+{
+-webkit-animation-delay: 0.9s;
+animation-delay: 0.9s;  
+}
+
+#cssLoader1.main-wrap .child9
+{
+ -webkit-animation-delay: 0.8s;
+animation-delay: 0.8s;  
+}
+
+#cssLoader1.main-wrap .child8
+{
+ -webkit-animation-delay: 0.7s;
+animation-delay: 0.7s;  
+}
+
+#cssLoader1.main-wrap .child7
+{
+ -webkit-animation-delay: 0.6s;
+animation-delay: 0.6s;  
+}
+
+#cssLoader1.main-wrap .child6
+{
+ -webkit-animation-delay: 0.5s;
+animation-delay: 0.5s;  
+}
+
+#cssLoader1.main-wrap .child5
+{
+ -webkit-animation-delay: 0.4s;
+animation-delay: 0.4s;
+}
+
+#cssLoader1.main-wrap .child4
+{
+ -webkit-animation-delay: 0.3s;
+animation-delay: 0.3s;    
+}
+
+#cssLoader1.main-wrap .child3
+{
+ -webkit-animation-delay: 0.2s;
+animation-delay: 0.2s;  
+}
+
+#cssLoader1.main-wrap .child2
+{
+ -webkit-animation-delay: 0.1s;
+animation-delay: 0.1s;
+}
+
+@-webkit-keyframes animate1 {
+
+50% {
+  -ms-transform: scaleY(0); 
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+
+}
+}
+
+@keyframes animate1 {
+50% {
+  -ms-transform: scaleY(0); 
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+}
+}/*css动画*/

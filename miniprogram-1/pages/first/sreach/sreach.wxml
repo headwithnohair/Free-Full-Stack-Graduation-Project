@@ -1,0 +1,48 @@
+<view class="text_sreach" style="border-bottom: 3px solid #d8d8d8;padding-bottom: 3px;">
+<input type="text" placeholder="  查询 | 英文或中文" class="sreach" bind:input="sreach"      bindconfirm="confirmsreach" maxlength="20"  placeholder-style="color:#838282;"
+> 
+</input>
+<image src="https://gcore.jsdelivr.net/gh/headwithnohair/cdn/tete.png" class="sreach_img"/>
+ </view>
+ <view>
+ 
+<scroll-view scroll-y="true"  hidden="{{!hideScroll}}" style="">
+<view wx:if="{{bindSource.length>0}}">
+  <view wx:for="{{bindSource}}" wx:key="id">
+    <view id="{{item}}" bindtap="deatailpage" class="itemview" >
+    <view style="border-color: rgb(255, 0, 0);border-bottom: dashed;height: max-content; border-bottom-color:#94fae9;">
+      <view style="margin-left: 10px;">
+          <text  style="font-size: 35px;font-weight:bolder;color: #40a3e6;">{{item.word_name}}</text> 
+          <image catch:tap="audio"data-word="{{item.word_name}}" src="/img/tete.png"class="sreach_img" style="float: right;margin-top:5px ;"/>
+          <view>
+              <text style="color: #40a3e6;">{{item.word_tran}}</text>
+          </view>
+          <text style="color: #40a3e6;">{{item.word_ex}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:else>
+  <view style="text-align: center;margin-top: 50px;border-bottom: bisque;">
+    <text style="color: rgb(77, 77, 77);">没有搜索到相关词汇</text>
+  </view>
+</view>
+</scroll-view>
+
+<view wx:if="{{!showWord}}"> 
+  <div id="cssLoader1" class="main-wrap">
+  <div class="child-common child1"></div>
+  <div class="child-common child2"></div>
+  <div class="child-common child3"></div>
+  <div class="child-common child4"></div>
+  <div class="child-common child5"></div>
+  <div class="child-common child6"></div>
+  <div class="child-common child7"></div>
+  <div class="child-common child8"></div>
+  <div class="child-common child9"></div>
+  <div class="child-common child10"></div>
+</div>
+</view>
+</view>

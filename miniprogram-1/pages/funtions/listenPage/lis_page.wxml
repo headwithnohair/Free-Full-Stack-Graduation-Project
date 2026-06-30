@@ -1,0 +1,38 @@
+<!--pages/funtions/listenPage/lis_page.wxml-->
+<view>
+<view style="margin-top: 250rpx;height: 500rpx;border-color: rgb(19, 80, 133);border-style:solid;width: 300px;margin-left: 30px;  border-radius: 10rpx;background-color: #fdfdfd;box-shadow: 3px 3px  3px rgba(104,123,228,1.000),6px 6px  5px rgba(104,123,228,0.5);;">
+<form name="word" id="word" method="post" bindsubmit="bindsubmit" reset="bindreset">
+<view style="border-bottom-color: rgb(219, 219, 219);border-bottom-style:solid;" class="container1">
+
+<view wx:for="{{wordArray}}"  wx:key="id" bind:tap='onFocus' >
+     
+  <input type="text" name="{{index}}" class="item" value="{{trueValue.length>=index+1?trueValue[index]:''}}"  maxlength="1" disabled  style="width:{{(260.0-wordArray.length*10)/wordArray.length}}px;margin-right: 10px;font-size: 32px;text-align: center;font-family: fantasy;height: 30px;"></input>
+    </view >
+    
+</view>
+<view class="hidden">
+  <input type="text"  maxlength="{{wordlength}}" focus="{{isFocus}}" bindinput="setValue"></input>
+</view>
+<view>
+<view style="text-align: center;margin-bottom: 20rpx;margin-top: 20px;font-size: 20px;" bind:tap="audioPlay">
+  <icon  type="success" size="16" color="#2979ff"/> 
+  <text>{{word.word_say}}</text>
+  <text>点击播放</text>
+</view>
+  <view style="border-style:dashed ;border-color: rgb(255, 255, 255);text-align: center;height: 30px;" wx:if="{{showTranDetail}}" bind:tap="changeShow">
+    <text >{{word.word_tran}}</text>
+  </view>
+  <view wx:else="{{!showTranDetail}}"  bind:tap="changeShow" style="text-align: center;font-size: 20px;width: 280px;margin-left: 10px;">
+    <view style="border-style: dashed ;text-align: center;height: 30px;">
+    <text >点击展示翻译</text>
+    </view>
+  </view>
+ 
+</view>
+<view style="text-align: center;" >
+    <button style="width:100px;margin-top: 15rpx;padding: 0px;box-shadow: 5px 5px  3px  rgba(104,123,228,1.000);background-color: #46bbff;Color: #ffffff;"  form-type="submit">确认</button>
+  </view>
+</form>
+</view>
+
+</view>

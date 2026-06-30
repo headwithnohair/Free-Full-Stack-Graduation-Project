@@ -1,0 +1,64 @@
+{
+  "pages": [
+    "pages/first/first",
+    "pages/talk/talk",
+    "pages/mine/mine",
+    "pages/study/plan/plan",
+    "pages/first/userstudy_data/us",
+    "pages/study/study",
+    "pages/study/wordDetail/wordDetail",
+    "pages/study/finsh/finsh",
+    "pages/funtions/listenPage/lis_page",
+    "pages/funtions/postPage/post_page",
+    "pages/funtions/readingPage/reading_page",
+    "pages/funtions/translatePage/trans_page",
+    "pages/mine/tousu/tousu",
+    "pages/mine/aboutUs/aboutUs",
+    "pages/mine/notice/notice",
+    "pages/talk/detail_page/dpage",
+    "pages/first/sreach/sreach",
+    "pages/study/plan/book_chioces/book_c",
+    "pages/test/test",
+    "pages/study/wrongList/wrongList",
+    "pages/study/wrongList/wDetail/detail",
+    "pages/funtions/listenPage/litWord/litWord",
+    "pages/funtions/translatePage/succ/succ"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#6922d6",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/first/first",
+        "text": "首页",
+        "iconPath": "img/wenhao.jpg",
+        "selectedIconPath": "img/wenhao.jpg"
+      },
+      {
+        "pagePath": "pages/talk/talk",
+        "text": "交流",
+        "iconPath": "img/wenhao.jpg",
+        "selectedIconPath": "img/wenhao.jpg"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "img/wenhao.jpg",
+        "selectedIconPath": "img/wenhao.jpg"
+      }
+    ]
+  },
+  "plugins": {
+    "WechatSI": {
+      "version": "0.3.5",
+      "provider": "provider-APPID"
+    }
+  },
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

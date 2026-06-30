@@ -1,0 +1,17 @@
+<view >
+<view style="margin-top:10px;">
+<view wx:for="{{bookList}}" wx:key="wtf">
+
+
+<view style="height: 150px;background-color: aqua;border-radius: 10px;width: 90%;margin-left: 10px;">
+    <view style="margin-left: 10px;margin-top: 10px;" bind:tap="changeBook" data-bookid="{{item.bookid}}" >
+    <text style="font-size:30px;font-weight: 900px;display: block;">{{item.bookname}}</text>
+    <text style="font-weight: 800px;display: block;margin-top: 50px;">选择用户数：{{item.userchoose}}</text> 
+    <text style="font-weight: 800px;display: block;">总计单词：{{item.wordCount}}</text> 
+    </view>
+</view>
+</view>
+</view>
+
+
+</view>

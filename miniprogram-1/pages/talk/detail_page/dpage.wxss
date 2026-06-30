@@ -1,0 +1,41 @@
+/* pages/talk/detail_page/dpage.wxss */
+page {
+  background-color: #f1f1f1;
+}
+.grid-c  {
+  display: grid;
+
+  grid-template-columns: 80rpx max-content;
+  grid-template-rows: 40rpx 40rpx;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 200rpx auto auto auto auto;
+  grid-template-rows: 100rpx 50rpx 60rpx;
+}
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 500rpx 500rpx ;
+  grid-template-rows: 100rpx auto;
+}
+
+.content{
+  background-color: white;
+  border-radius: 10rpx;
+}
+.small_icon{
+  width: 25px;
+  height: 25px;
+  display:inline-block;
+  text-align:center;
+  margin-left: 10px;
+  border: 1px solid rgb(110, 206, 250);font-size: 30rpx;
+
+}
+.conter {
+  width: 500px;
+  height: 500px;
+  border: 2px solid red;
+  position: relative;
+  margin-top: 30px;
+}

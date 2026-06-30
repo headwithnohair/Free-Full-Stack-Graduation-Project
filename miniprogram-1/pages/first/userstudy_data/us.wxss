@@ -1,0 +1,46 @@
+/* pages/first/userstudy_data/us.wxss */
+.sreach_img{
+  width: 60rpx;
+  height: 30px;
+  text-align:right;
+  
+}
+.top_nav{ 
+  width: 100%;
+   height: 82rpx;
+    line-height: 80rpx;
+     border-bottom: 1px solid #ddd;
+      background-color: rgb(250, 250, 250);
+       position: fixed;
+        top: 0; 
+        left: 0;
+         z-index: 3;
+        }
+.top_nav .scroll_list{ 
+  height: 82rpx;
+   white-space:nowrap;
+  }
+.top_nav .scroll_item{ 
+  display: inline-block; 
+  padding: 0 10px;
+   font-size: 14px;
+   vertical-align: top;
+  }
+.top_nav .scroll_item.active{ 
+  color:#ae51fa;
+}
+.top_nav .sub{ 
+  width:56rpx; 
+  height: 4rpx;
+  background-color: #ae51fa;
+  position: absolute;
+  top:78rpx; 
+  transition: left .5s;
+}
+.content{
+  height: max-content;
+   padding-top: 84rpx; 
+   text-align: center;
+   line-height: 80rpx; 
+   font-size: 28rpx;
+  }

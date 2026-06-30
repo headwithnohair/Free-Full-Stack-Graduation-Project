@@ -1,0 +1,94 @@
+<!-- 顶部状态栏 -->
+<view class="bar-box" style="height: {{navBarHeight}}px;">
+    <view class="level" style="margin-top: {{barHeight}}px;">
+        <view class="level bar" bindtap="headClick" wx:if="{{show}}">
+            <image class="top-head" src="{{hasUserInfo==true?avatarUrl:'/img/wenhao.jpg'}}" mode="widthFix"></image>
+            <view class="welcome">
+                <text class="nick" wx:if="{{username==undefind}}">用户名</text>
+                <text class="nick"  wx:else>{{username}}</text>
+                <text class="acount" >--</text>
+            </view>
+        </view>
+        <view class="bar-title" wx:else>个人中心</view>
+    </view>
+</view>
+<view class="head-box" style="padding-top: {{navBarHeight+20}}px;">
+    <view class="level" type="primary" bindtap="openPopup" data-index="2">
+        <image class="top-head" src="{{hasUserInfo==true?avatarUrl:'/img/wenhao.jpg'}}" mode="widthFix"></image>
+        <view class="level head-right">
+            <view class="welcome">
+                <text class="nick" style="font-size: 30rpx;" wx:if="{{username==undefind}}">用户名</text>
+                <text class="nick" style="font-size: 30rpx;" wx:else>{{username}}</text>
+                <text class="acount" style="font-size: 28rpx;">初来乍到</text>
+            </view>
+            <view class="level set-center">{{wxopenid?"已认证微信":"认证中"}}</view>
+        </view>
+    </view>
+   
+</view>
+<view class="level sign-box">
+    <view>发帖数：{{postCount}} </view>
+    <view>注册于 {{signtime}} </view>
+</view>
+
+<!-- 二级菜单 -->
+<view class="level tab-box">
+    <block wx:for="{{tabList}}" wx:for-index="index" wx:for-item="item" wx:key="item">
+        <view class="tab-list" bindtap="tabClick" data-item="{{item}}">
+            <image class="tab-img" src="{{item.src}}" mode="widthFix"></image>
+            <view class="tab-text">{{item.title}}</view>
+        </view>
+    </block>
+</view>
+
+<view class="white-box">
+    <button open-type="share" class="row" style="width: 100%;">
+        <view class="left">
+            <icon type="success" size="16" color="#2979ff"></icon>
+            <text class="text">分享好友</text>
+        </view>
+        <image class="right" src="/img/wenhao.jpg" mode="widthFix"></image>
+    </button>
+
+
+    <button class="row" style="width: 100%;border-bottom: none;"  bind:tap="tappp">
+        <view class="left">
+            <icon type="success" size="16" color="#2979ff" ></icon>
+            <text class="text">当前版本</text>
+        </view>
+        <view class="right" style="text-align: center;">0.0.1</view>
+    </button>
+</view>
+<view class="copy">
+    <text>©大学进阶英语交流学习小程序的设计与实现</text>
+
+</view>
+
+<view class="popup-box" wx:if="{{showIndex=='2'}}" bindtap="closePopup"></view> 
+<view class="info-bottom" wx:if="{{showIndex=='2'}}">
+<view wx:if="{{false}}">
+切换
+</view>
+<view wx:else>
+<view style="" >
+
+  <button open-type="chooseAvatar" bindchooseavatar="bindchooseavatar" style=" width: 150rpx;height: 150rpx;border-radius: 100rpx;background-color: white;padding:0px;">
+    <image class="top-head" src="{{avatarUrl}}" ></image>
+  </button>
+  <form bindsubmit="formsubmit">
+    <input type="nickname" placeholder="请输入昵称" name="nickname" style="text-align: center;" value="{{user.nickname}}"/>
+    <button form-type="submit" type="primary" style="width: 200px;" >微信快捷登录</button>
+  </form>
+  <view wx:if="{{noWechat}}">
+    <view style="margin-left: 10px;">
+    <input placeholder="账号" id="name" maxlength="10"></input>
+    <input placeholder="密码" id="password" maxlength="10"></input>
+    <button style="width: 200px;background-color: aquamarine;" bind:tap="userlogin">登录</button>
+    </view>
+  </view>
+  <input type="nickname" placeholder="切换登录方式" name="nickname" style="text-align: center;" disabled bind:tap="changeWayLogin"/>
+ 
+</view>
+</view>
+</view>
+ 

@@ -1,0 +1,60 @@
+<!--pages/funtions/translatePage/trans_page.wxml  -->
+<view style="margin-top:65px;"></view>
+
+
+<view>
+  <view style="height: max-content;width: 330px;background-color: rgba(45, 212, 212, 0.911);margin-left:20px;box-shadow:5px 5px 5px rgba(0, 0, 0, 0.253);border-radius: 10px;padding-left: 5px;padding-top:5px;font-family:Arial, Helvetica, sans-serif;">
+    <view style="display: flex;flex-direction:row;flex-wrap:wrap;;width: 100%;" id="mask">
+    <text decode="true" >&nbsp;&nbsp;&nbsp;&nbsp;</text>
+    <view wx:for="{{listA}}" wx:key="idx"  wx:for-index="index" id="location{{index}}"  mode="widthFix" >
+
+<text bind:tap="userCheck" data-id="{{index}}" data-value="{{item}}"class="{{selectId==index?'yes':''}}" style="word-break: keep-all;" user-selectable="true" >{{item}}</text>
+<text decode="true" >&nbsp;</text>
+</view>
+</view>
+<view style="text-align: right;">
+
+
+</view>
+</view>
+<view style="margin-top:20px;text-align: center;align-items: center;justify-content: center; vertical-align: center;">
+
+<view style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); align-items: center;justify-content: center; vertical-align: center;position: relative;display:inline-block; box-shadow:5px 5px 5px rgba(0, 0, 0, 0.253);" bind:tap="pause">
+  <view  class="{{longmusic?'pause':'play'}}" style="position: absolute;top:15px;left: 20px;"></view>
+</view>
+<view bind:tap="upload" style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); align-items: center;justify-content: center; vertical-align: center;position: relative;display:inline-block;margin-left: 5px;">
+  <button style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); align-items: center;justify-content: center; vertical-align: center;position: relative;font-family:fantasy;font-size: 20px;color: blueviolet;">P</button>
+  
+  </view>
+
+</view>
+
+<!--用户输入层-->
+<view style="height: max-content;width: 330px;background-color: azure;margin-left:20px;box-shadow:5px 5px 5px rgba(0, 0, 0, 0.253);margin-top: 20px;padding-top: 10px;border-radius: 10px;padding-bottom: 10px;">
+  <view style="">
+  <view>
+<textarea maxlength="{{tranMaxSize}}"   type="text" auto-focus="true" bindinput="check" style="margin-left: 10px; word-break:break-all;width: 95%;" placeholder='请输入翻译'></textarea>
+<view style="text-align: right;">
+<text >{{tranNowSize}} /{{tranMaxSize}}（可输入字数）</text>
+</view>
+
+
+</view>
+</view>
+  </view>
+  <button style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); font-family:fantasy;font-size: 20px;color: blueviolet;padding-left: 5px;margin-top: 15px;"
+  bind:tap="toFirst">back</button>
+
+</view>
+
+
+<!--用户点击单词蒙版-->
+<view wx:if="{{showDetail}}">
+  <view class="trangle" style="top:{{postiontop}}px;left: {{postionLeft-20}}px;"></view>
+<view class="maskLayer" style="top:{{postiontop+10}}px;left: {{postionLeft<50?0:postionLeft+10}}rpx;" bind:tap="audioPlay" data-value="{{wordname}}" >
+  <icon  type="success" size="16" color="rgb(52, 157, 243) "/> <text>{{wordDetail}}</text>
+</view>
+<view class="popWindow" bind:tap="canceltap" style="height:{{masktop}}px;"></view>
+  <view class="popWindow" bind:tap="canceltap" style="margin-top:{{maskbottom}}px ;">
+</view>
+</view>

@@ -1,0 +1,7 @@
+<!--pages/mine/tousu/tousu.wxml-->
+<view style="margin-top: 50px;">
+<text style="font-size: 30px;font-weight: 800px;">  十分抱歉，反馈平台已关闭！</text>
+
+
+
+</view>

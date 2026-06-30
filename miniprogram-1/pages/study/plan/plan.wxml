@@ -1,0 +1,72 @@
+<view>
+<view style="  background: linear-gradient(#ccccff 0% 70%,#ffcdcc 90% 100%);height: max-content;position: relative;">
+<view style="height: 50px;"></view>
+  <view style="background-color:rgb(255, 255, 255);padding: 5px;width: max-content;margin-left: 100px;" class="test1" bind:tap="toBookChoice">
+    <image src="https://cdn.jsdelivr.net/gh/headwithnohair/cdn/warn.jpg" class="book_img" style="height:300rpx;width: 280rpx;border-radius: 10rpx;margin-top: 5px;"/>
+    <text style="text-align: center;font-weight:bold;display: block;font-family:fantasy;"> {{user_base_data.bookName}}</text>    
+  </view>
+  <button bind:tap="toFirst" style="position: absolute;top:0px;height: 50px;width: 50px;border-radius: 100%;background-color: rgba(0,0,0,0); font-family:fantasy;font-size: 20px;color:#ffffff;padding-left: 5px;margin-top: 15px;">Back</button>
+  <button bind:tap="submit" style="position: absolute;top:80px;left:265px;height: 50px;width: 50px;border-radius: 100%;background-color: #ff7e42; font-family:fantasy;font-size: 20px;color: #ffffff;padding-left: 5px;margin-top: 15px;" class="test1">Done</button>
+</view>
+  <view  style=" margin-top: 20px;display: block;font-size: 20px;font-family:Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;	font-weight: bold;margin-bottom: 5px;margin-left: 80px;border:1px solid #ffffff;width: max-content;border-radius: 10px;padding-left: 5px;padding-right: 5px;" bindtap="openPopup" data-index="2">
+    <text> 每日新词 <text style="font-weight:bold;"> {{user_base_data.study_max}} </text> 复习词 </text><text style="font-weight:bold;"> {{user_base_data.res_max}} </text> 
+
+
+  </view>
+  <view style="display: block;font-size: 20px;font-family:Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;	font-weight: bold;margin-left: 80px;">
+    <text style="text-align: left;margin-left: 30rpx;" bind:tap="jump_link" data-url="{{wordListUrl}}"> 已学<text style="font-weight:bold;"> {{user_base_data.already_get}}个</text> </text> <text><text style="font-weight:bold;">，占{{user_base_data.percent_word}}%</text></text>
+
+  
+  </view>
+  
+  <view > 
+
+  <text style="display: block;font-size: 20px;font-family:Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;	font-weight: bold;margin-bottom: 5px;margin-left: 10px;">目标设置: </text>
+  <view style="background: #ffffff;height: 30px;border-radius: 10px;width: 350px;padding-left: 5px;margin-left: 5px;padding-top: 10px;padding-bottom: 10px;font-weight: 700;font-size: 20px;" class="test">
+    <input style="display: inline-block;" bindinput="changeScore" type="text" value="{{stauis.userScore}}"/> 
+
+  </view>
+  <picker mode="date" header-text="选择时间"  value="{{date}}" bindchange="bindDateChange"><view  bindchange="bindDateChange"><text style="display: block;font-size: 20px;font-family:Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;	font-weight: bold;margin-bottom: 5px;margin-top: 5px;margin-left: 10px;">调整日期</text></view></picker> 
+  
+  <picker mode="date" header-text="选择时间"  value="{{stauis.date}}" bindchange="bindDateChange">
+  <view class="font30" style="background: #ffffff;height: 30px;border-radius: 10px;width: 350px;padding-left: 5px;margin-left: 5px;padding-top: 10px;padding-bottom: 10px;font-weight: 700;font-size: 20px;" class="test">
+    <text >{{stauis.date}}</text>
+    <text  style="float: right;margin-right: 10px;color:#ccccff">▼</text>
+  </view>
+</picker>
+<view style="margin-top: 10px;">
+<view  style="border-top-left-radius: 5px;border-bottom-left-radius: 5px;height: 40px;width:175px;font-size: 30px;display: inline-block;background: {{stauis.lantype=='en'?'#ccccff ;color:#ffffff;':'#ffffff'}};height: 30px;padding-left: 5px;margin-left: 5px;padding-top: 10px;padding-bottom: 10px;font-weight: 700;font-size: 20px;text-align: center;" bind:tap="radioChange" data-value="r1" class="test"> 美国口音</view>
+<view  style="border-top-right-radius: 5px;border-bottom-right-radius: 5px;height: 40px;font-size: 30px;width:175px;display: inline-block;background: {{stauis.lantype=='uk'?'#ccccff ;color:#ffffff;':'#ffffff'}};height: 30px;padding-left: 5px;padding-top: 10px;padding-bottom: 10px;font-weight: 700;font-size: 20px;text-align: center;" bind:tap="radioChange" data-value="r2" class="test"> 英国口音</view>
+</view>
+
+
+
+<view>
+
+
+
+<view style="background: #ffffff;height: 30px;border-radius: 10px;width: 350px;padding-left: 5px;margin-left: 5px;height: 30px;padding-left: 5px;margin-left: 5px;padding-top: 10px;padding-bottom: 10px;font-weight: 700;font-size: 20px;margin-top: 15px;" bind:tap="radioChange_auturead" data-autoSay="{{stauis.autoSay}}" class="test">
+
+ <text>自动播放读音</text> 
+ <radio  color="{{stauis.autoSay=='true'?'#ccccff':'#ffffff'}}" value="yes" checked="{{stauis.autoSay=='true'}}"  style="float: right;"  ></radio>
+</view>
+</view>
+
+</view>
+</view>
+
+<!--调整计划弹窗-->
+<view class="popup-box" wx:if="{{showIndex=='2'}}" bindtap="closePopup"></view> 
+<view class="info-bottom" wx:if="{{showIndex=='2'}}">
+  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 200px;" value="{{value}}" bindchange="bindChange">
+    <text style="margin-top: 175rpx;margin-left: 20rpx;"> 学习 </text>
+    <picker-view-column>
+        <view wx:for="{{plan.recite}}" wx:key="recite" style="line-height: 50px; text-align: center;">{{item}}</view>
+      </picker-view-column>
+      <text style="margin-top: 175rpx;margin-left: 20rpx;">复习 </text>
+      <picker-view-column>
+        <view wx:for="{{plan.review}}" wx:key="review" style="line-height: 50px; text-align: center;">{{item}}</view>
+      </picker-view-column>
+  </picker-view>
+</view> 
+<!--调整日期弹窗-->

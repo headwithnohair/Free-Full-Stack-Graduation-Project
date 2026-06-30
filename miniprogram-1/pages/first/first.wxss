@@ -1,0 +1,163 @@
+/* pages/first/first.wxss */
+page{
+  background-color: #f1f1f1;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns:  auto auto auto;
+  text-align: center;
+  grid-template-rows: 40rpx 40rpx 40rpx;
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns:  20% 20% 20% 20% 20%;
+  text-align: center;
+  grid-template-rows: 40rpx 40rpx 40rpx 40rpx 40rpx;
+}
+.text_sreach{
+  width: 100%;
+}
+.sreach{
+  border-radius: 30px;
+  border: 1px solid #f6e3f7;
+  padding: 1px;
+  font-size: 15px;
+  width: 630rpx;
+  display:inline-block;
+  margin-left: 3px;
+  padding-left: 10px;
+}
+.sreach_img{
+  width: 60rpx;
+  height: 30px;
+  display:inline-block;
+  text-align:center;
+  margin-left: 10px;
+}
+.sreach_img2{
+  width: 40rpx;
+  height: 40rpx;
+  display:inline-block;
+  text-align:center;
+  margin-top: 5px;
+}
+.study{
+  margin-top: 20px;
+border-radius: 10px;
+border: 1px solid rgb(228, 127, 203);
+width: 370px;
+background-color: rgb(255, 255, 255);
+box-shadow:5px 5px 5px rgba(228, 127, 203,0.3),
+           -5px -5px 5px rgba(228, 127, 203,0.3)
+
+;
+}
+.same_line{
+  display: inline-block;
+}
+.rr{
+  float: right;
+  margin-top: 50px;
+  
+}
+.ll{
+  float: left;
+  
+  margin-top: 31px;
+}
+.dayscount{
+  font-size: 100rpx;
+  margin-left: 10px;
+  line-height: 1;
+  
+}
+
+
+.cneter_O{
+  display: inline-block;
+  
+  width: 100%;
+  align-content: center;
+  
+  height: 100rpx;
+ }
+button.last_day{
+  border-radius: 30px;
+  font-size: 10px;
+  width: 320px ;
+  text-align: left;
+  background-color: #f0b7e6;
+  padding: 1rpx 30rpx ;
+  margin-top: 10px;
+  white-space: pre;
+  box-shadow: 3px 3px 3px rgba(146, 45, 230, 0.329);
+ }
+.start{
+text-align: center;
+background-color: #f8b7fc;
+border-radius: 30px;
+font-size: 15px;
+width: 600rpx ;
+text-align: center;
+padding: 1rpx 30rpx ;
+margin-top: 10px;
+white-space: pre;
+color:rgb(240, 234, 238);
+ }
+
+ 
+.level {
+  display: flex;
+  
+}
+
+/* 状态栏 */
+.bar-box {
+  background-color: #6922d6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  padding: 50rpx 0;
+}
+
+.bar {
+  width: 80%;
+  margin-right: 30%;
+  margin-top: 1.5%;
+  margin-left: 20rpx;
+}
+
+.bar-title {
+  margin-top: 2%;
+  margin-left: 20rpx;
+  text-align: center;
+  font-size: 34rpx;
+  color: white;
+}
+
+.top-head {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 100rpx;
+  background-color: white;
+}
+
+.welcome {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  color: white;
+}
+
+.nick {
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.acount {
+  font-size: 22rpx;
+  margin-top: 5rpx;
+}

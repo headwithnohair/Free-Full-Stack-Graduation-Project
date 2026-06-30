@@ -1,0 +1,26 @@
+/* pages/funtions/listenPage/lis_page.wxss */
+page {
+  background-color: #f1f1f1;
+}
+
+.container1 {
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20px;
+  padding-right: 10px;
+
+}
+
+.item {
+  border:1px solid #241717;
+  border-radius: 10rpx;
+  display: inline-block;
+  text-align:center
+}
+
+.hidden{
+height: 0;
+width: 0;
+}

@@ -1,0 +1,29 @@
+<view style="margin-top: 60px;"></view>
+<view>
+  <view style="height: max-content;width: 330px;background-color: rgba(45, 212, 212, 0.911);margin-left:20px;box-shadow:5px 5px 5px rgba(0, 0, 0, 0.253);border-radius: 10px;padding-left: 5px;padding-top:5px;font-family:Arial, Helvetica, sans-serif;">
+    <view style="display: flex;flex-direction:row;flex-wrap:wrap;;width: 100%;margin-left: 5px;">
+<text style="font-family:Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;">翻译答案： </text>
+<textarea style="display: flex;flex-direction:row;flex-wrap:wrap;;width: 100%;font-family:Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;">{{trans}}</textarea>
+ 
+</view>
+  </view>
+  <view style="height: max-content;width: 330px;background-color: azure;margin-left:20px;box-shadow:5px 5px 5px rgba(0, 0, 0, 0.253);margin-top: 20px;padding-top: 10px;border-radius: 10px;padding-bottom: 10px;">
+    <view>
+<textarea maxlength="{{tranMaxSize}}"   type="text"  style="margin-left: 10px; word-break:break-all;width: 95%;font-family:Impact, Haettenschweiler, ‘Arial Narrow Bold’, sans-serif;" placeholder='翻译' value="{{content}}" disabled></textarea>
+<view style="text-align: right;">
+<text > （你的翻译）</text>
+</view>
+
+</view>
+  </view>
+  <view style="text-align: center;margin-top: 10px;">
+  <view bind:tap="upload" style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); align-items: center;justify-content: center; vertical-align: center;position: relative;display:inline-block;margin-left: 5px;">
+  <button style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); align-items: center;justify-content: center; vertical-align: center;position: relative;font-family:fantasy;font-size: 20px;color: blueviolet;padding-left: 5px;" bind:tap="next" >Next</button>
+  
+  </view>
+  <view bind:tap="upload" style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); align-items: center;justify-content: center; vertical-align: center;position: relative;display:inline-block;margin-left: 5px;">
+  <button style="height: 50px;width: 50px;border-radius: 100%;background-color: rgba(172, 236, 255,1); align-items: center;justify-content: center; vertical-align: center;position: relative;font-family:fantasy;font-size: 20px;color: blueviolet;padding-left: 5px;" bind:tap="back" >back</button>
+</view>
+  </view>
+
+</view>

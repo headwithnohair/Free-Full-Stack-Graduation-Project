@@ -1,0 +1,21 @@
+/* pages/study/study.wxss */
+page{
+  background-color: #5dd7fc;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns:  auto auto auto;
+  text-align: center;
+  grid-template-rows: 40rpx 40rpx 40rpx;
+}
+
+.buttom{
+  border-radius: 30rpx;width:90%;height: 75rpx;background-color: #7ad0f7;
+  margin-bottom: 20rpx;
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  line-height: 40px;
+  align-items: center;
+  font-style: bold;
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

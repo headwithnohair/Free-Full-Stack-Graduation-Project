@@ -1,0 +1,65 @@
+page {
+  background: linear-gradient(200deg,#85ffb8,10%,#5ee7df,70%,#b490ca);
+ /* background: -webkit-linear-gradient(top,);*/
+
+ } 
+button{
+  box-shadow:5px 5px 5px rgba(0, 0, 0, 0.253);
+}
+.yes{
+  background-color: rgb(100, 248, 211);
+}
+
+/* 蒙版设置*/
+.popWindow {  
+  width: 100%;  
+  height: 100%;  
+  left: 0;  
+  top: 0;  
+  filter: alpha(opacity=50);  
+  opacity: 0.5;  
+  z-index: 900;  
+  position: absolute;  
+}  
+.maskLayer {  
+  border-radius: 10px;
+  background-color:rgb(99, 240, 197);  
+  width: 200px;  
+  line-height: 30px;  
+  left: 50%;  
+  top: 50%;  
+  color:#fff;  
+  z-index: 999;  
+  position: absolute;  
+  text-align:center;  
+}  
+.trangle {
+  position: absolute;  
+  z-index: 999;  
+  height: 0;
+  width: 0;
+  text-align:center; 
+  border-top: 0px solid transparent;
+  border-bottom: 20px solid rgb(100, 248, 211); 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+}
+
+
+.play {
+
+  width: 0;
+  height: 0;
+  border: 1.5vh solid rgba(216, 93, 247, 0.884);
+  border-left: 2vh solid rgba(216, 93, 247, 0.884);
+  border-right: none;
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+.pause{
+    width: 20px;
+    height: 20px;
+    border-style: double;
+    border-width: 0px 0px 0px 20px;
+    border-color: rgba(216, 93, 247, 0.884);
+}

@@ -1,0 +1,111 @@
+// pages/test/test.js
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    url:'https://fanyi.baidu.com/gettts?lan=uk&text=test&spd=3&source=web',
+    
+  },
+  audioPlay() {
+    const innerAudioContext = wx.createInnerAudioContext()
+    innerAudioContext.autoplay = true
+    innerAudioContext.src = 'https://fanyi.baidu.com/gettts?lan=uk&text=shouldnt&spd=3&source=web'
+
+  },
+  test(){
+    this.setData({
+      url:'https://fanyi.baidu.com/gettts?lan=uk&text=test&spd=3&source=web'
+
+    })
+    // wx.request({
+    //   url: 'https://fanyi.baidu.com/gettts',
+    //   data:{
+    //     lan: "uk",
+    //     text: "test",
+    //     spd: 3,
+    //     source: "web",
+        
+    //   },
+    //   success(res){
+    //     console.log(res.data);
+    //   }
+    // })
+    wx.downloadFile({
+      url: 'https://fanyi.baidu.com/gettts',
+      data:{
+        lan: "uk",
+        text: "test",
+        spd: 3,
+        source: "web",
+        
+      },
+      success(res){
+        console.log("ok");
+        let wordAudio = wx.createInnerAudioContext();
+        wordAudio.autoplay = true;
+        wordAudio.play()
+      }
+    })
+    
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad(options) {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady() {
+
+      this.audioCtx = wx.createAudioContext('Audio')
+
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide() {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh() {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom() {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage() {
+
+  },
+ 
+})

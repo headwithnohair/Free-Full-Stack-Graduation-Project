@@ -1,0 +1,8 @@
+/* pages/study/wrongList/wrongList.wxss */
+.buttom{
+  border-radius: 30rpx;width:90%;height: 75rpx;background-color: #f6e3f7;
+  margin-bottom: 20rpx;
+}
+page{
+  background-color: #9571f9;
+}

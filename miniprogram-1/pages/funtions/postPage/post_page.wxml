@@ -1,0 +1,26 @@
+<!--pages/funtions/postPage/post_page.wxml-->
+
+<view style="margin-top: 15px;">
+<view style="height: max-content;margin: 5px;background-color: rgba(255, 255, 255, 0.808);margin-top: 10px;border-radius: 10px;padding-top: 10px;padding-bottom: 10px;">
+
+      <view style="border-radius: 10px;border:1px solid rgb(0, 0, 0);margin-left: 5px;margin-right: 5px;padding-left: 5px;height: 35px;margin-right: 100px;">
+        <input style="font-size: 25px;height: 35px;" maxlength="15" placeholder="请输入标题" id="tit"></input>
+      </view>
+  <textarea value="" style="background-color: rgba(110, 255, 243, 0);margin: 10px;height: 150px;width: 345px;padding-top: 5px;padding-left: 5px;font-size: 20px;" placeholder="请输入内容" maxlength="100" id="cc"></textarea>
+
+  <view >
+  
+   <view wx:for="{{img}}" wx:for-item="img" wx:key="wtf" style="display: inline-block;">
+    <image src="{{img.tempFilePath}}" style="margin-left: 5px;width: 115px;height: 115px; border-radius: 5px;" mode="aspectFit" data-id="{{index}}"/> 
+   </view>
+  </view>
+
+</view>
+
+<view style="text-align: center;">
+  <view style="display: inline-block;border-radius: 100%;background-color: seashell;height: 40px;width: 40px;text-align: center; line-height:35px" bind:tap="back">返回</view>
+  <view style="display: inline-block;border-radius: 100%;background-color: seashell;height: 40px;width: 40px;text-align: center; line-height:35px;margin-right: 20px;" bind:tap="choose">图片</view>
+  <view  style="display: inline-block;border-radius: 100%;background-color: seashell;height: 40px;width: 40px;text-align: center; line-height:35px" bind:tap="reset">重置</view>
+  <view style="display: inline-block;border-radius: 100%;background-color: seashell;height: 40px;width: 40px;text-align: center; line-height:35px" bind:tap="post">发帖</view>
+</view>
+</view>

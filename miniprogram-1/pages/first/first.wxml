@@ -1,0 +1,75 @@
+<!--pages/first/first.wxml-->
+<view wx:if="{{show}}">
+<view class="bar-box" style="height: {{navBarHeight}}px;">
+    <view class="level" style="margin-top: {{menuBotton}}px;" >
+        <view class="level bar"  >
+          <input type="text" value=" 查询 | 英文或中文" class="sreach" style=" width: 500rpx; " bind:tap="jump_link" data-url="{{sreach_url}}" disabled/>
+          
+        </view>
+      </view>
+</view>
+</view>
+<view wx:else>
+  
+</view>
+       
+
+<view>
+
+<view class="text_sreach">
+<p style="display: block;background-color:#6922d6;padding: 0px;height:150rpx; ;"></p>
+<input type="text" placeholder="  查询 | 英文或中文" class="sreach" bind:tap="jump_link"
+data-url="{{sreach_url}}" disabled style="background-color: rgb(255, 255, 255);border:rosybrown;border-style:solid ;border-width:1px;margin-top: 3px;box-shadow: 3px 3px 3px rgba(146, 45, 230, 0.329);"
+ maxlength="20">
+</input>
+
+<image src="https://gcore.jsdelivr.net/gh/headwithnohair/cdn/tete.png" class="sreach_img"/>
+ </view>
+
+ <view class="study">
+ <view class="same_line ll" ><text class="dayscount">{{user_base_data.holdDay}}</text><text>天,已坚持</text></view>
+ <view class="same_line rr" ><image src="https://gcore.jsdelivr.net/gh/headwithnohair/cdn/book.png" class="sreach_img2"/><text bind:tap="jump_link" data-url="{{plan_url}}">学习数据 》</text>
+ <!--
+ <text> | </text>
+ <image src="https://gcore.jsdelivr.net/gh/headwithnohair/cdn/rili.png" class="sreach_img2"/><text>单词表 》</text>
+ -->
+ </view>
+
+ <view class="cneter_O"><button class="last_day" bind:tap="jump_link" data-url="{{plan_url}}">距离 {{user_base_data.deadline_name}} 还有 {{user_base_data.deadline_day}} 天
+</button></view>
+<view style="background-image: url(https://gcore.jsdelivr.net/gh/headwithnohair/cdn/888.png);border-radius: 30px;padding: 10rpx 30rpx;width: 330px;margin-left: 5px;box-shadow: 5px 5px 5px rgba(146, 45, 230, 0.329);" >
+  <text style="font-size: 20px;color: #f6e3f7;margin-left:10rpx ;">{{user_base_data.bookName}}</text>
+  <text style="font-size: 10px; float: right;background-color:  #f6e3f7;margin-top: 10px;border-radius: 10rpx;"></text>
+  <view>
+ <button size="mini"class="last_day" bind:tap="jump_link" data-url="{{plan_url}}">学习设置</button>
+ </view>
+ <view style="margin-top: 20rpx;"><text style="display: inline-block;color: #f6e3f7">已完成 {{user_base_data.percent_word}}%</text> 
+ <text style="float: right;">{{user_base_data.already_get}} /{{user_base_data.notyet_get}} 词</text> </view>
+ <view class="progress-box" style="margin-top: 10rpx;">
+  <progress border-radius="20"  percent="{{user_base_data.percent_word}}" active stroke-width="3" />
+</view>
+<view class="grid-container"  style="margin-top:30rpx;">
+  <grid-tile wx:for="{{gridList}}"  wx:key="idx" >
+  <text style="width: 20%;height: 25px;text-align: center;font-size: 15px;color: #f6e3f7">{{item}}</text>
+  </grid-tile>
+  <grid-tile wx:for="{{gg}}" wx:key="idx" style="width: 100%;" >
+  <text style="width: 15%;text-align: center;font-size: 20px;color: #f6e3f7">{{item}}</text>
+  </grid-tile>
+</view>
+<button class="start" bind:tap="jump_link2" data-url="{{study_url}}">开始学习</button>
+ </view> 
+
+<view style="margin-top: 20rpx;text-align: center;">
+  <grid-tile wx:for="{{mokuai}}" wx:key="mokuai" wx:for-item="itemName"  style="margin-right: 40rpx;" >
+
+    <button  style="width: 60px;display: inline-block; border-radius: 30px;font-size: 15px;text-align: center;background-color: #f0b7e6;padding: 1rpx 5rpx ;margin-top: 10px;white-space: pre;margin-bottom: 10px;box-shadow: 3px 3px 3px rgba(146, 45, 230, 0.329); font-weight: 800;" bind:tap="jump_link" data-url="{{urlll[index]}}">{{itemName}}</button>
+  </grid-tile>
+</view>
+
+ </view>
+<view style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;font-size: 20px;"  class="study">
+<text style="display:block;text-align: center;margin-bottom: 5PX;margin-top: 10px;">{{eng}}</text>
+<text style="display:block;text-align: center;margin-bottom: 15PX;"> {{chi}}</text>
+</view>
+
+</view>
